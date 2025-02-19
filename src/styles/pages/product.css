@@ -1,0 +1,454 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add Product Button */
+.add-product-btn {
+  background-color: #28a745; /* Green color */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px 0;
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-product-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Hero Section Styling */
+.hero-section {
+  background: url("../../../public/assets/images/proove.jpg") no-repeat center
+    center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* Carousel Styling */
+#image-carousel {
+  margin: 50px 0;
+}
+
+#image-carousel .carousel .slide img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+#image-carousel .legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  color: white;
+}
+
+/* Header styles */
+#product-tittle {
+  font-size: 36px;
+  color: #222;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #0066cc;
+  padding-bottom: 10px;
+}
+
+/* Search Bar Styles */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  width: 250px;
+}
+
+.search-bar button {
+  padding: 10px;
+  border: none;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #004d99;
+}
+
+.filters {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+.filters.show {
+  transform: translateX(0);
+}
+
+.filters h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.filters label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.filters select,
+.filters input[type="range"],
+.filters input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 16px;
+}
+
+.filters select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M7 10l5 5 5-5z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.filters span {
+  font-size: 14px;
+  color: #777;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Styling for Range Input */
+.filters input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.filters input[type="range"]:hover {
+  background: #007bff;
+}
+
+.filters input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+}
+
+.filters input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+}
+
+/* Product List */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Product Card Content */
+/* Add to Cart Button */
+.add-to-cart-btn {
+  background-color: #28a745; /* Green color */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px; /* Space between text and button */
+  width: 100%; /* Make it stretch to the full width of the card */
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Product Card Modifications */
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 20px; /* Space between cards */
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.product-card h3 {
+  font-size: 24px; /* Increase font size */
+  font-weight: 600; /* Bold but not too heavy */
+  color: #333; /* Darker color for better readability */
+  margin-top: 20px;
+  margin-bottom: 10px; /* Add space between the name and other text */
+  letter-spacing: 1px; /* Subtle spacing between letters */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Light shadow for a modern effect */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.product-card h3:hover {
+  color: #0066cc; /* Blue color on hover to match the button */
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.product-card p {
+  font-size: 16px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.product-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* Hover Effect for Card */
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card button {
+  background-color: #0066cc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.product-card button:hover {
+  background-color: #004d99;
+}
+
+/* Add a product label to show more info */
+.product-card .product-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #0066cc;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Modify the price */
+.product-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 10px;
+}
+
+/* Add hover effects for better interaction */
+.product-card:hover .product-label {
+  background-color: #004d99;
+}
+
+.product-card button {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.product-card button:hover {
+  background-color: #004d99;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #004d99;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.modal-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 16px;
+}
+
+.modal-content button {
+  width: 48%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="button"] {
+  background-color: #ccc;
+}
+
+.modal-content button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.modal-content button[type="button"]:hover {
+  background-color: #bbb;
+}
+
+.modal-content input,
+.modal-content select {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+
+.no-products-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #555; /* Neutral grey color */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-products-message a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.no-products-message a:hover {
+  text-decoration: underline;
+}

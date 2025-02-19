@@ -1,0 +1,128 @@
+/* styles/pages/cart.css */
+.cart {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9; /* Soft background color for the page */
+  border-radius: 8px;
+}
+
+.cart h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  background: #fff;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart h3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cart p {
+  color: #555;
+  font-size: 14px;
+}
+
+.cart .item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart .item-details p {
+  margin-bottom: 5px;
+}
+
+.cart .item-actions {
+  text-align: right;
+}
+
+.cart .item-actions button {
+  padding: 8px 15px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart .item-actions button:hover {
+  background-color: #005b99; /* Change to darker blue on hover */
+}
+
+.cart h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: right;
+  color: #333;
+  margin-top: 30px;
+}
+
+.cart button.proceed {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffcc00;
+  color: #003366;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart button.proceed:hover {
+  background-color: #e6b800; /* Darker yellow for hover effect */
+}
+
+.cart-link {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  top: 0; /* Aligns closer to the top of the text */
+  right: -5px; /* Moves the badge closer to the text */
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 18px; /* Slightly smaller for a tighter fit */
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cart li {
+    flex-direction: column;
+  }
+  
+  .cart .item-details {
+    margin-bottom: 10px;
+  }
+
+  .cart button.proceed {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,97 @@
+/* styles/components/navbar.css */
+nav {
+  background-color: #003366; /* Dark blue background */
+  color: white;
+  padding: 16px 0; /* Increased padding for more space */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+nav .left-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+nav .welcome-message {
+  margin-left: 6rem;
+  white-space: nowrap;
+}
+
+
+nav .right-section {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Espaciado entre los elementos del navbar derecho */
+}
+
+nav h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav .container a {
+  color: white; /* White text for links */
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav .container a:hover {
+  background-color: #005b99; /* Darker blue background on hover */
+  border-radius: 4px;
+}
+
+nav .container a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #ffcc00; /* Highlight active link with a golden underline */
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav .auth-links {
+  margin-left: auto; /* Alinea los links de Login y Register a la derecha */
+  display: flex;
+  gap: 16px; /* Espaciado entre los enlaces */
+}
+
+nav .auth-links a {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav .auth-links a:hover {
+  background-color: #005b99;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .container a {
+    padding: 10px 0;
+  }
+}

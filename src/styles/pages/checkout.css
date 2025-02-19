@@ -1,0 +1,89 @@
+/* styles/pages/checkout.css */
+.checkout {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f9f9f9; /* Soft background color for the page */
+  border-radius: 8px;
+}
+
+.checkout h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.checkout form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.checkout h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+.checkout input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.checkout input:focus {
+  border-color: #003366;
+  outline: none;
+}
+
+.checkout button {
+  width: 100%;
+  padding: 15px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout button:hover {
+  background-color: #005b99;
+}
+
+@media (max-width: 768px) {
+  .checkout {
+    padding: 15px;
+  }
+
+  .checkout h1 {
+    font-size: 28px;
+  }
+
+  .checkout h2 {
+    font-size: 22px;
+  }
+
+  .checkout form {
+    padding: 20px;
+  }
+
+  .checkout input {
+    font-size: 14px;
+  }
+
+  .checkout button {
+    font-size: 16px;
+  }
+}
