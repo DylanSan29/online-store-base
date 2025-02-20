@@ -36,13 +36,15 @@ const Navbar = () => {
       <button onClick={() => changeLanguage("es")}>🇪🇸 Español</button>
       <div className="container">
         <div className="left-section">
-          <h1>
-            <Link to="/">{t("navBar.home")}</Link>
-          </h1>
           {isAuthenticated && (
-            <span className="welcome-message">
-              {t("navBar.welcome", { username: user?.username })}
-            </span>
+            <>
+              <h1>
+                <Link to="/">{t("navBar.home")}</Link>
+              </h1>
+              <span className="welcome-message">
+                {t("navBar.welcome", { username: user?.username })}
+              </span>
+            </>
           )}
         </div>
         <div className="right-section">
