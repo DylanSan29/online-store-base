@@ -1,25 +1,30 @@
+// pages/Home.jsx
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import '../styles/pages/home.css';
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <section className="hero">
-        <h1>Welcome to Radiator World</h1>
-        <p>Your trusted source for high-quality radiators.</p>
+        <h1>{t("home.heroTitle")}</h1>
+        <p>{t("home.heroDescription")}</p>
       </section>
-      
+
       <section className="featured-products">
-        <h2>Featured Products</h2>
+        <h2>{t("home.featuredProducts")}</h2>
         <div className="product-grid">
+          {/* Placeholder for featured products */}
         </div>
       </section>
-      
+
       <section className="testimonials">
-        <h2>What Our Customers Say</h2>
+        <h2>{t("home.testimonials")}</h2>
         <div>
-          <blockquote>"Best radiators ever!" - John Doe</blockquote>
-          <blockquote>"Great quality and fast delivery." - Jane Smith</blockquote>
+          <blockquote>{t("home.testimonial1")}</blockquote>
+          <blockquote>{t("home.testimonial2")}</blockquote>
         </div>
       </section>
     </div>
