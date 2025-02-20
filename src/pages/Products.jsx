@@ -11,9 +11,9 @@ const Products = () => {
   const [category, setCategory] = useState("");
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [availability, setAvailability] = useState(true);
-  const [showFilters, setShowFilters] = useState(false);
+  const [showFilters,] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortOption, setSortOption] = useState("priceAsc");
+  const [sortOption,] = useState("priceAsc");
   const [quantities, setQuantities] = useState({});
   const dispatch = useDispatch();
   // Modal State

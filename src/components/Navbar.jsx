@@ -12,10 +12,10 @@ const Navbar = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const navigate = useNavigate();
 
-  const totalItems = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  // const totalItems = cartItems.reduce(
+  //   (total, item) => total + item.quantity,
+  //   0
+  // );
 
   const handleLogout = () => {
     dispatch(logoutSuccess());

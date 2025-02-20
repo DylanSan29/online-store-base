@@ -79,7 +79,6 @@ const es = {
         noProductsFound: "No se encontraron productos.",
         tryAdjustingFilters: "Intenta ajustar tus filtros.",
         inStock: "En Stock",
-        outOfStock: "Agotado",
         quantityInCart: "Cantidad en carrito",
         addToCart: "Añadir al Carrito",
         removeFromCart: "Disminuir Cantidad",

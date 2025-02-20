@@ -79,7 +79,6 @@ const en = {
         noProductsFound: "No products found.",
         tryAdjustingFilters: "Try adjusting your filters.",
         inStock: "In Stock",
-        outOfStock: "Out of Stock",
         quantityInCart: "Quantity in cart",
         addToCart: "Add to Cart",
         removeFromCart: "Decrease Quantity",
