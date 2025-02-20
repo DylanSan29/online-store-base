@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, updateItemQuantity } from "../redux/CartSlice";
 import "../styles/pages/product.css";
+import { useTranslation } from "react-i18next";
 
 const Products = () => {
+  const { t } = useTranslation();
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [category, setCategory] = useState("");
@@ -151,13 +153,12 @@ const Products = () => {
 
   return (
     <div>
-      <h2 id="product-tittle">Our Products</h2>
-
+      <h2 id="product-tittle">{t("products.title")}</h2>
       {/* Search Bar */}
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Search products..."
+          placeholder={t("products.searchPlaceholder")}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
@@ -165,26 +166,26 @@ const Products = () => {
 
       {/* Add Product Button */}
       <button className="add-product-btn" onClick={handleAddProduct}>
-        Add Product
+        {t("products.addProductButton")}
       </button>
 
       {/* Filters Section */}
       {showFilters && (
         <aside className={`filters ${showFilters ? "show" : ""}`}>
-          <h3>Filters</h3>
+          <h3>{t("products.filters")}</h3>
           <div>
-            <label>Category:</label>
+            <label>{t("products.category")}:</label>
             <select
               onChange={(e) => setCategory(e.target.value)}
               value={category}
             >
-              <option value="">All</option>
-              <option value="electronics">Electronics</option>
-              <option value="clothing">Clothing</option>
+              <option value="">{t("products.all")}</option>
+              <option value="electronics">{t("products.electronics")}</option>
+              <option value="clothing">{t("products.clothing")}</option>
             </select>
           </div>
           <div>
-            <label>Price Range:</label>
+            <label>{t("products.priceRange")}:</label>
             <input
               type="range"
               min="0"
@@ -197,13 +198,17 @@ const Products = () => {
             </span>
           </div>
           <div>
-            <label>Availability:</label>
+            <label>{t("products.availability")}:</label>
             <input
               type="checkbox"
               checked={availability}
               onChange={() => setAvailability(!availability)}
             />
-            <span>{availability ? "Available" : "Out of Stock"}</span>
+            <span>
+              {availability
+                ? t("products.available")
+                : t("products.outOfStock")}
+            </span>
           </div>
         </aside>
       )}
@@ -211,7 +216,8 @@ const Products = () => {
       {/* No Products Found */}
       {filteredProducts.length === 0 && (
         <p className="no-products-message">
-          No products found. <a href="#filters">Try adjusting your filters.</a>
+          {t("products.noProductsFound")}{" "}
+          <a href="#filters">{t("products.tryAdjustingFilters")}</a>
         </p>
       )}
 
@@ -221,19 +227,25 @@ const Products = () => {
             <img src={product.image} alt={product.name} />
             <h3>{product.name}</h3>
             <p className="price">${product.price}</p>
-            <p>{product.available ? "In Stock" : "Out of Stock"}</p>
-            <p>Quantity in cart: {quantities[product.id] || 0}</p>
+            <p>
+              {product.available
+                ? t("products.inStock")
+                : t("products.outOfStock")}
+            </p>
+            <p>
+              {t("products.quantityInCart")}: {quantities[product.id] || 0}
+            </p>
             <button
               className="add-to-cart-btn"
               onClick={() => handleAddToCart(product)}
             >
-              Add to Cart
+              {t("products.addToCart")}
             </button>
             <button
               className="remove-from-cart-btn"
               onClick={() => handleRemoveFromCart(product)}
             >
-              Decrease Quantity
+              {t("products.removeFromCart")}
             </button>
           </div>
         ))}
@@ -242,7 +254,7 @@ const Products = () => {
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <h2>Add Product</h2>
+            <h2>{t("products.modalTitle")}</h2>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -250,7 +262,7 @@ const Products = () => {
               }}
             >
               <div>
-                <label>Name:</label>
+                <label>{t("products.name")}:</label>
                 <input
                   type="text"
                   name="name"
@@ -260,7 +272,7 @@ const Products = () => {
                 />
               </div>
               <div>
-                <label>Price:</label>
+                <label>{t("products.price")}:</label>
                 <input
                   type="number"
                   name="price"
@@ -270,20 +282,22 @@ const Products = () => {
                 />
               </div>
               <div>
-                <label>Category:</label>
+                <label>{t("products.category")}:</label>
                 <select
                   name="category"
                   value={newProduct.category}
                   onChange={handleInputChange}
                   required
                 >
-                  <option value="">Select Category</option>
-                  <option value="electronics">Electronics</option>
-                  <option value="clothing">Clothing</option>
+                  <option value="">{t("products.selectCategory")}</option>
+                  <option value="electronics">
+                    {t("products.electronics")}
+                  </option>
+                  <option value="clothing">{t("products.clothing")}</option>
                 </select>
               </div>
               <div>
-                <label>Availability:</label>
+                <label>{t("products.availability")}:</label>
                 <input
                   type="checkbox"
                   name="available"
@@ -296,12 +310,14 @@ const Products = () => {
                   }
                 />
                 <span>
-                  {newProduct.available ? "Available" : "Out of Stock"}
+                  {newProduct.available
+                    ? t("products.available")
+                    : t("products.outOfStock")}
                 </span>
               </div>
-              <button type="submit">Submit</button>
+              <button type="submit">{t("products.submit")}</button>
               <button type="button" onClick={handleCloseModal}>
-                Cancel
+                {t("products.cancel")}
               </button>
             </form>
           </div>

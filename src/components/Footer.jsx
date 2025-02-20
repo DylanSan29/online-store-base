@@ -1,69 +1,74 @@
+// components/Footer.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import "../styles/components/footer.css";
 
 const Footer = () => {
-  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h4>About Us</h4>
+          <h4>{t("footer.aboutUs")}</h4>
           <img
             src="src/images/radiator-logo.jpg"
             alt="Company Logo"
             className="footer-image"
           />
-          <p>
-            At <strong>Your Company</strong>, we specialize in high-quality
-            radiators, offering reliable solutions for all types of vehicles and
-            industries. Our commitment is your satisfaction and trust.
-          </p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t("footer.description"),
+            }}
+          ></p>
         </div>
+
         {isAuthenticated && (
           <div className="footer-section">
-            <h4>Quick Links</h4>
+            <h4>{t("footer.quickLinks")}</h4>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">{t("footer.home")}</Link>
               </li>
               <li>
-                <Link to="/products">Products</Link>
+                <Link to="/products">{t("footer.products")}</Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about">{t("footer.about")}</Link>
               </li>
               <li>
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact">{t("footer.contact")}</Link>
               </li>
             </ul>
           </div>
         )}
 
         <div className="footer-section">
-          <h4>Follow Us</h4>
+          <h4>{t("footer.followUs")}</h4>
           <div className="social-links">
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Facebook
+              {t("footer.facebook")}
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Twitter
+              {t("footer.twitter")}
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Instagram
+              {t("footer.instagram")}
             </a>
           </div>
         </div>
@@ -72,7 +77,7 @@ const Footer = () => {
       {/* Footer Bottom Section */}
       <div className="footer-bottom">
         <p>
-          &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+          &copy; {new Date().getFullYear()} {t("footer.copyright")}
         </p>
       </div>
     </footer>

@@ -9,9 +9,11 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
+import ForgotPassword from "./pages/ForgotPassword";
 import Layout from "./Layout";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
+import "./i18n";
 
 function App() {
   return (
@@ -38,7 +40,14 @@ function App() {
               </PublicRoute>
             }
           />
-
+          <Route
+            path="forgot-password"
+            element={
+              <PublicRoute>
+                <ForgotPassword />
+              </PublicRoute>
+            }
+          />
           {/* Rutas privadas */}
           <Route
             index

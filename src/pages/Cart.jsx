@@ -1,10 +1,12 @@
 // pages/Cart.jsx
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart,updateItemQuantity } from "../redux/CartSlice";
+import { removeFromCart, updateItemQuantity } from "../redux/CartSlice";
+import { useTranslation } from "react-i18next";
 import "../styles/pages/cart.css";
 
 const Cart = () => {
+  const { t } = useTranslation();
   const { cartItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
@@ -24,15 +26,15 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <h1>Shopping Cart</h1>
+      <h1>{t("cart.title")}</h1>
       <ul>
         {cartItems.map((item) => (
           <li key={item.id}>
             <div className="item-details">
               <h3>{item.name}</h3>
-              <p>Price: ${item.price.toFixed(2)}</p>
+              <p>{t("cart.price")}: ${item.price.toFixed(2)}</p>
               <div className="quantity">
-                <label htmlFor={`quantity-${item.id}`}>Quantity:</label>
+                <label htmlFor={`quantity-${item.id}`}>{t("cart.quantity")}:</label>
                 <input
                   id={`quantity-${item.id}`}
                   type="number"
@@ -45,13 +47,15 @@ const Cart = () => {
               </div>
             </div>
             <div className="item-actions">
-              <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
+              <button onClick={() => handleRemoveItem(item.id)}>
+                {t("cart.remove")}
+              </button>
             </div>
           </li>
         ))}
       </ul>
-      <h2>Total: ${totalAmount.toFixed(2)}</h2>
-      <button className="proceed">Proceed to Checkout</button>
+      <h2>{t("cart.total")}: ${totalAmount.toFixed(2)}</h2>
+      <button className="proceed">{t("cart.proceed")}</button>
     </div>
   );
 };
