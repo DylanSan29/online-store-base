@@ -15,6 +15,7 @@ const es = {
         about: "Sobre nosotros",
         contact: "Contacto",
         cart: "Carrito",
+        inventory: "Inventario",
         logout: "Cerrar sesión",
         welcome: "Bienvenido, {{username}}!",
     },  

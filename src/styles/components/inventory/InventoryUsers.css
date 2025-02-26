@@ -1,0 +1,64 @@
+.inventory-users {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .users-table th,
+  .users-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .users-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .role-dropdown {
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .status-btn {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .active {
+    background-color: lightgreen;
+  }
+  
+  .inactive {
+    background-color: lightcoral;
+  }
+  
+  .delete-btn {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+  

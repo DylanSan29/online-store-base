@@ -3,13 +3,14 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, updateItemQuantity } from "../redux/CartSlice";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import "../styles/pages/cart.css";
 
 const Cart = () => {
   const { t } = useTranslation();
   const { cartItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const totalAmount = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
@@ -32,9 +33,13 @@ const Cart = () => {
           <li key={item.id}>
             <div className="item-details">
               <h3>{item.name}</h3>
-              <p>{t("cart.price")}: ${item.price.toFixed(2)}</p>
+              <p>
+                {t("cart.price")}: ${item.price.toFixed(2)}
+              </p>
               <div className="quantity">
-                <label htmlFor={`quantity-${item.id}`}>{t("cart.quantity")}:</label>
+                <label htmlFor={`quantity-${item.id}`}>
+                  {t("cart.quantity")}:
+                </label>
                 <input
                   id={`quantity-${item.id}`}
                   type="number"
@@ -54,8 +59,12 @@ const Cart = () => {
           </li>
         ))}
       </ul>
-      <h2>{t("cart.total")}: ${totalAmount.toFixed(2)}</h2>
-      <button className="proceed">{t("cart.proceed")}</button>
+      <h2>
+        {t("cart.total")}: ${totalAmount.toFixed(2)}
+      </h2>
+      <button className="proceed" onClick={() => navigate("/checkout")}>
+        {t("cart.proceed")}
+      </button>
     </div>
   );
 };

@@ -15,6 +15,7 @@ const en = {
         about: "About Us",
         contact: "Contact",
         cart: "Cart",
+        inventory: "Inventory",
         logout: "Logout",
         welcome: "Welcome, {{username}}!",
     },

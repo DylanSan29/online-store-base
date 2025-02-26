@@ -11,11 +11,13 @@ const Products = () => {
   const [category, setCategory] = useState("");
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [availability, setAvailability] = useState(true);
-  const [showFilters,] = useState(false);
+  const [showFilters] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortOption,] = useState("priceAsc");
+  const [sortOption] = useState("priceAsc");
   const [quantities, setQuantities] = useState({});
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+  const isAdmin = user?.role === "admin";
   // Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newProduct, setNewProduct] = useState({
@@ -165,9 +167,11 @@ const Products = () => {
       </div>
 
       {/* Add Product Button */}
-      <button className="add-product-btn" onClick={handleAddProduct}>
-        {t("products.addProductButton")}
-      </button>
+      {isAdmin && (
+        <button className="add-product-btn" onClick={handleAddProduct}>
+          {t("products.addProductButton")}
+        </button>
+      )}
 
       {/* Filters Section */}
       {showFilters && (

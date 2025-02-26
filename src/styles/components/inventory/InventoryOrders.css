@@ -1,0 +1,54 @@
+.inventory-orders {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .orders-table th,
+  .orders-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .orders-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .status-dropdown {
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .processing { background-color: yellow; }
+  .shipped { background-color: lightblue; }
+  .delivered { background-color: lightgreen; }
+  .cancelled { background-color: lightcoral; }
+  
+  .delete-btn {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+  

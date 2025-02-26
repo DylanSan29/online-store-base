@@ -15,16 +15,31 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let userRole = null;
+  
     if (email === "admin" && password === "123") {
-      console.log("Login successful");
-      setError("");
-      dispatch(loginSuccess({ username: email }));
-      localStorage.setItem("authToken", "dummyAuthToken");
-      navigate("/");
+      userRole = "admin";
+    } else if (email === "client" && password === "123") {
+      userRole = "client";
     } else {
       setError("The user or password are wrong");
+      return;
     }
+  
+    console.log("Login successful");
+    setError("");
+  
+    // Dispatch user data to Redux
+    dispatch(loginSuccess({ username: email, role: userRole }));
+  
+    // Store authentication data in localStorage
+    localStorage.setItem("authToken", "dummyAuthToken");
+    localStorage.setItem("userRole", userRole);
+  
+    // Redirect based on role
+    navigate("/");
   };
+  
 
   return (
     <div>

@@ -11,7 +11,7 @@ const Navbar = () => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.cart);
   const navigate = useNavigate();
-
+  const isAdmin = user?.role === "admin";
   // const totalItems = cartItems.reduce(
   //   (total, item) => total + item.quantity,
   //   0
@@ -53,9 +53,6 @@ const Navbar = () => {
               <Link to="/products" className="hover:underline">
                 {t("navBar.products")}
               </Link>
-              <Link to="/checkout" className="hover:underline">
-                {t("navBar.checkout")}
-              </Link>
               <Link to="/about" className="hover:underline">
                 {t("navBar.about")}
               </Link>
@@ -70,6 +67,11 @@ const Navbar = () => {
                   )}
                 </Link>
               </div>
+              {isAdmin && (
+                <Link to="/inventory" className="hover:underline">
+                  {t("navBar.inventory")}
+                </Link>
+              )}
               <button onClick={handleLogout} className="logout-button">
                 {t("navBar.logout")}
               </button>
