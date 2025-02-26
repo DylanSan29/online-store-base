@@ -16,7 +16,6 @@ const Home = () => {
       <section className="featured-products">
         <h2>{t("home.featuredProducts")}</h2>
         <div className="product-grid">
-          {/* Placeholder for featured products */}
         </div>
       </section>
 
