@@ -71,7 +71,6 @@ body {
     color: #555;
   }
   
-  /* Testimonials Section */
   .testimonials {
     padding: 40px 20px;
     background-color: #f4f4f4;
@@ -102,8 +101,10 @@ body {
     color: #003366;
   }
   
-  /* Mobile Responsiveness */
   @media (max-width: 768px) {
+    .hero{
+      padding-top: 7rem;
+    }
     .hero h1 {
       font-size: 2.5rem;
     }

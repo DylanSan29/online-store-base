@@ -1,0 +1,93 @@
+/* Navbar container */
+.admin-navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #1e1e2f;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  /* Pushes the link and buttons to the right */
+  .admin-navbar a {
+    margin-left: auto; /* Moves the link to the right */
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .admin-navbar a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Container for language buttons */
+  .language-switcher {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px; /* Adds space between the link and flags */
+  }
+  
+  /* Language buttons */
+  .admin-navbar button {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .admin-navbar button:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 0rem; /* Adjust this value based on the navbar's height */
+    }
+    .admin-navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 10px 0;
+    }
+  
+    .admin-navbar a {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  
+    .language-switcher {
+      margin-left: 0;
+      margin-top: 5px;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .admin-navbar {
+      flex-direction: row;
+      justify-content: center;
+      padding: 10px;
+    }
+  
+    .language-switcher {
+      gap: 5px;
+    }
+  
+    .admin-navbar button {
+      font-size: 18px;
+    }
+  
+    .admin-navbar a {
+      font-size: 14px;
+    }
+  }
+  

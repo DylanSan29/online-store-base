@@ -12,7 +12,7 @@ const es = {
         signUp: "Registrarse",
         products: "Productos",
         checkout: "Pagar",
-        about: "Sobre nosotros",
+        about: "Nosotros",
         contact: "Contacto",
         cart: "Carrito",
         inventory: "Inventario",

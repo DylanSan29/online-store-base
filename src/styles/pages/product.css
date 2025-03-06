@@ -427,7 +427,6 @@ body {
   margin-bottom: 15px;
 }
 
-
 .no-products-message {
   font-size: 1.5rem;
   font-weight: bold;
@@ -451,4 +450,51 @@ body {
 
 .no-products-message a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .add-product-btn {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .modal-content {
+    width: 90%; 
+    padding: 20px;
+  }
+
+  .filters {
+    display: none;
+  }
+  .filters.show {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+
+  #product-tittle{
+    padding-top: 5rem;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 18px;
+  }
+
+  .product-card p {
+    font-size: 14px;
+  }
 }

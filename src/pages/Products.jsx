@@ -156,7 +156,6 @@ const Products = () => {
   return (
     <div>
       <h2 id="product-tittle">{t("products.title")}</h2>
-      {/* Search Bar */}
       <div className="search-bar">
         <input
           type="text"

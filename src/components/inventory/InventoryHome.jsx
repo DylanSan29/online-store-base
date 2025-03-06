@@ -1,17 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/components/inventory/InventoryHome.css"; // Create a CSS file for styling
+import "../../styles/components/inventory/InventoryHome.css"; 
 
 const InventoryHome = () => {
   return (
     <div className="inventory-home">
-      {/* Page Header */}
       <header className="inventory-header">
         <h1>📦 Inventory Dashboard</h1>
         <p>Manage your store efficiently with real-time insights.</p>
       </header>
 
-      {/* Quick Stats Section */}
       <section className="inventory-stats">
         <div className="stat-card">
           <h3>🛒 Total Products</h3>
@@ -35,46 +33,46 @@ const InventoryHome = () => {
         </div>
       </section>
 
-      {/* Recent Orders Section */}
       <section className="recent-orders">
         <h2>📋 Recent Orders</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Customer</th>
-              <th>Status</th>
-              <th>Amount</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>#10234</td>
-              <td>John Doe</td>
-              <td>✅ Completed</td>
-              <td>$120.00</td>
-              <td><Link to="/inventory/orders">View</Link></td>
-            </tr>
-            <tr>
-              <td>#10235</td>
-              <td>Jane Smith</td>
-              <td>⏳ Pending</td>
-              <td>$85.00</td>
-              <td><Link to="/inventory/orders">View</Link></td>
-            </tr>
-            <tr>
-              <td>#10236</td>
-              <td>Michael Lee</td>
-              <td>🚚 Shipped</td>
-              <td>$150.00</td>
-              <td><Link to="/inventory/orders">View</Link></td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Amount</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#10234</td>
+                <td>John Doe</td>
+                <td>✅ Completed</td>
+                <td>$120.00</td>
+                <td><Link to="/inventory/orders">View</Link></td>
+              </tr>
+              <tr>
+                <td>#10235</td>
+                <td>Jane Smith</td>
+                <td>⏳ Pending</td>
+                <td>$85.00</td>
+                <td><Link to="/inventory/orders">View</Link></td>
+              </tr>
+              <tr>
+                <td>#10236</td>
+                <td>Michael Lee</td>
+                <td>🚚 Shipped</td>
+                <td>$150.00</td>
+                <td><Link to="/inventory/orders">View</Link></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
-      {/* Quick Links */}
       <section className="quick-links">
         <h2>🔗 Quick Actions</h2>
         <div className="action-buttons">

@@ -1,77 +1,32 @@
-/* styles/components/navbar.css */
+/* General Navbar Styles */
 nav {
-  background-color: #003366; /* Dark blue background */
+  background-color: #003366; /* Dark blue */
   color: white;
-  padding: 16px 0; /* Increased padding for more space */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 16px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Se mantiene como relativo en pantallas grandes */
+  z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav .left-section {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 16px;
 }
 
-nav .welcome-message {
-  margin-left: 6rem;
-  white-space: nowrap;
-}
-
-
 nav .right-section {
   display: flex;
   align-items: center;
-  gap: 16px; /* Espaciado entre los elementos del navbar derecho */
+  gap: 16px;
 }
 
-nav h1 {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-nav .container a {
-  color: white; /* White text for links */
-  font-size: 16px;
-  font-weight: 500;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-nav .container a:hover {
-  background-color: #005b99; /* Darker blue background on hover */
-  border-radius: 4px;
-}
-
-nav .container a.active {
-  font-weight: bold;
-  border-bottom: 2px solid #ffcc00; /* Highlight active link with a golden underline */
-}
-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-nav .auth-links {
-  margin-left: auto; /* Alinea los links de Login y Register a la derecha */
-  display: flex;
-  gap: 16px; /* Espaciado entre los enlaces */
-}
-
-nav .auth-links a {
+nav a {
   color: white;
   font-size: 16px;
   font-weight: 500;
@@ -80,18 +35,149 @@ nav .auth-links a {
   transition: all 0.3s ease;
 }
 
-nav .auth-links a:hover {
+nav a:hover {
   background-color: #005b99;
   border-radius: 4px;
 }
 
+/* Welcome Message */
+nav .welcome-message {
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+/* Cart Link */
+.cart-link {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.language-select {
+  background-color: #003366; /* Color azul oscuro */
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none; /* Oculta el diseño predeterminado del navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: #005b99;
+  background-color: #002855; /* Color más oscuro al seleccionar */
+}
+
+/* Flecha personalizada */
+.language-select::-ms-expand {
+  display: none;
+}
+
+.language-select::after {
+  content: "▼";
+  font-size: 12px;
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none; /* Hidden on larger screens */
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle.open {
+  transform: rotate(90deg);
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-  nav .container {
-    flex-direction: column;
-    align-items: flex-start;
+  /* Navbar Fixed on Small Screens */
+  nav {
+    position: fixed; /* Fixed navbar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
   }
 
-  nav .container a {
-    padding: 10px 0;
+  nav .container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Agrupar el contenido de la left-section */
+  nav .left-section .left-content {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+  }
+
+  nav .left-section .left-content h1 {
+    margin: 0;
+    font-size: 18px; /* Ajusta el tamaño de fuente si es necesario */
+  }
+
+  nav .left-section .left-content .welcome-message {
+    margin-left: 5px; /* Ajusta el margen si es necesario */
+  }
+
+  /* Hide regular menu items */
+  nav .right-section {
+    display: none;
+    flex-direction: column;
+    background-color: #003366;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Show menu when active */
+  nav .right-section.active {
+    display: flex;
+  }
+
+  /* Make links full-width */
+  nav .right-section a,
+  nav .right-section button {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  /* Show hamburger button */
+  .menu-toggle {
+    display: block;
   }
 }

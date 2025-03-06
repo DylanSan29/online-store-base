@@ -163,12 +163,26 @@ body {
   transform: translateY(-3px);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .about,
-  .mission,
-  .history {
-    padding: 20px;
+
+  .about {
+    padding: 30px 20px;
+  }
+
+  .about h1 {
+    font-size: 30px;
+  }
+
+  .about h2 {
+    font-size: 22px;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+
+  .intro {
+    margin-bottom: 30px;
   }
 
   .team-members {
@@ -176,8 +190,16 @@ body {
     align-items: center;
   }
 
-  .cta {
+  .team-member {
+    max-width: 220px;
+  }
+
+  .testimonials {
     padding: 30px 20px;
+  }
+
+  .cta {
+    padding: 40px 20px;
   }
 
   .cta h2 {
@@ -191,5 +213,40 @@ body {
   .cta-button {
     padding: 12px 30px;
     font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding-top: 5rem;
+  }
+
+  .about h1 {
+    font-size: 26px;
+  }
+
+  .about h2 {
+    font-size: 20px;
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+
+  .cta h2 {
+    font-size: 24px;
+  }
+
+  .cta p {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .team-member {
+    max-width: 180px;
   }
 }

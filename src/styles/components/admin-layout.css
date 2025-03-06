@@ -1,49 +1,97 @@
 .admin-layout {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+/* Navbar remains at the top */
+.admin-navbar {
+  background: #1e1e1e;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  z-index: 10;
+  position: sticky; /* Mantener la barra de navegación fija arriba */
+  top: 0;
+}
+
+/* Flex container for sidebar + main content */
+.admin-content {
+  display: flex;
+  flex: 1;
+  overflow-x: hidden; /* Evita el scroll horizontal dentro del contenedor */
+}
+
+/* Sidebar stays fixed on the left */
+.sidebar {
+  width: 250px;
+  background: #2c2c2c;
+  padding: 20px;
+  height: 100vh;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* Sidebar list styles */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.sidebar ul li a:hover {
+  background: #444;
+}
+
+/* Adjust main content to move right */
+.admin-main {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px; /* Empujar el contenido a la derecha */
+  width: calc(100% - 250px); /* Evitar desbordamiento */
+  transition: margin-left 0.3s ease;
+  overflow-x: hidden; /* Evitar scroll horizontal en el contenido principal */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding-top: 0rem;
   }
-  
-  .admin-navbar {
-    background: #1e1e1e;
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .admin-content {
-    display: flex;
-    flex: 1;
-  }
-  
   .sidebar {
-    width: 250px;
-    background: #2c2c2c;
-    padding: 20px;
-    height: 100vh;
-    color: white;
+    width: 200px;
   }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    padding: 15px;
-  }
-  
-  .sidebar ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .sidebar ul li a:hover {
-    background: #444;
-  }
-  
   .admin-main {
-    flex: 1;
-    padding: 20px;
+    margin-left: 200px;
+    width: calc(100% - 200px);
   }
-  
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 0rem;
+  }
+  .sidebar {
+    width: 60px;
+  }
+  .admin-main {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+}
