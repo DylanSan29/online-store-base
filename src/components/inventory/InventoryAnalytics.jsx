@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
+import { Chart as ChartJS, LineElement, PointElement, LinearScale, Title, Tooltip, Legend, CategoryScale } from "chart.js";
 import "../../styles/components/inventory/InventoryAnalytics.css";
+
+// Registrar los módulos de Chart.js
+ChartJS.register(LineElement, PointElement, LinearScale, Title, Tooltip, Legend, CategoryScale);
 
 const InventoryAnalytics = () => {
   // Mock Sales Data
