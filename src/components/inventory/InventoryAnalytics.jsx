@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import Chart from "chart.js/auto";
+import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import "../../styles/components/inventory/InventoryAnalytics.css";
 

@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/components/sidebar.css"; // Create this file for styling
+import "../styles/components/sidebar.css"; // Estilos
 
 const Sidebar = () => {
+  // Estado para controlar si el sidebar está abierto o cerrado
+  const [isOpen, setIsOpen] = useState(true);
+
+  // Función para alternar la visibilidad del sidebar
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? "open" : "closed"}`}>
+      <button className="menu-toggle" onClick={toggleSidebar}>
+        {isOpen ? "☰" : "☰"}
+      </button>
       <ul>
         <li><Link to="/inventory/">🏠 Inventory Home</Link></li>
         <li><Link to="/inventory/products">📦 Products</Link></li>

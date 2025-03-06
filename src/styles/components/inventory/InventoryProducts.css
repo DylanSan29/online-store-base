@@ -1,70 +1,119 @@
 .inventory-products {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .search-bar {
-    width: 100%;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.product-table-container {
+  overflow-x: auto; /* Permite desplazamiento horizontal en móviles */
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  min-width: 600px; /* Evita que la tabla se comprima demasiado en móviles */
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+.add-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.add-product-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.add-product-form button {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.add-product-form button:hover {
+  background-color: darkgreen;
+}
+
+/* 🎯 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .inventory-products {
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
   }
-  
-  .product-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+
+  .search-bar {
+    font-size: 14px;
+    padding: 8px;
   }
-  
+
+  .product-table-container {
+    overflow-x: auto;
+  }
+
   .product-table th,
   .product-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
+    padding: 8px;
+    font-size: 14px;
   }
-  
-  .product-table th {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .delete-btn {
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .delete-btn:hover {
-    background-color: darkred;
-  }
-  
+
   .add-product-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
   }
-  
+
   .add-product-form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px;
   }
-  
+
   .add-product-form button {
-    background-color: green;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px;
   }
-  
-  .add-product-form button:hover {
-    background-color: darkgreen;
-  }
-  
+}

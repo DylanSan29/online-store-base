@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logoutSuccess } from "../redux/authSlice"; // Import logout action
+import { logoutSuccess } from "../redux/authSlice";
 import "../styles/components/navbar.css";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -12,80 +12,83 @@ const Navbar = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const isAdmin = user?.role === "admin";
-  // const totalItems = cartItems.reduce(
-  //   (total, item) => total + item.quantity,
-  //   0
-  // );
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
     dispatch(logoutSuccess());
     navigate("/login");
   };
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
   };
 
-  const { t } = useTranslation();
-
   return (
     <nav>
-      <button onClick={() => changeLanguage("en")}>🇬🇧 English</button>
-      <button onClick={() => changeLanguage("es")}>🇪🇸 Español</button>
       <div className="container">
+        {/* Left Section */}
         <div className="left-section">
-          {isAuthenticated && (
-            <>
-              <h1>
-                <Link to="/">{t("navBar.home")}</Link>
-              </h1>
-              <span className="welcome-message">
-                {t("navBar.welcome", { username: user?.username })}
-              </span>
-            </>
-          )}
+          {/* Contenedor para agrupar el botón y los elementos en la vista responsiva */}
+          <div className="left-content">
+            {/* Hamburger Menu Button - Now on the Left */}
+            <button
+              className="menu-toggle"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              ☰
+            </button>
+
+            {isAuthenticated && (
+              <>
+                <h1>
+                  <Link to="/">{t("navBar.home")}</Link>
+                </h1>
+                <span className="welcome-message">
+                  {t("navBar.welcome", { username: user?.username })}
+                </span>
+              </>
+            )}
+          </div>
         </div>
-        <div className="right-section">
+
+        {/* Right Section - Navigation Links */}
+        <div className={`right-section ${menuOpen ? "active" : ""}`}>
           {isAuthenticated ? (
             <>
-              <Link to="/products" className="hover:underline">
-                {t("navBar.products")}
-              </Link>
-              <Link to="/about" className="hover:underline">
-                {t("navBar.about")}
-              </Link>
-              <Link to="/contact" className="hover:underline">
-                {t("navBar.contact")}
-              </Link>
+              <Link to="/products">{t("navBar.products")}</Link>
+              <Link to="/about">{t("navBar.about")}</Link>
+              <Link to="/contact">{t("navBar.contact")}</Link>
+
               <div className="cart-link">
-                <Link to="/cart" className="cart-link">
+                <Link to="/cart">
                   {t("navBar.cart")}
                   {cartItems.length > 0 && (
                     <div className="cart-count">{cartItems.length}</div>
                   )}
                 </Link>
               </div>
-              {isAdmin && (
-                <Link to="/inventory" className="hover:underline">
-                  {t("navBar.inventory")}
-                </Link>
-              )}
+
+              {isAdmin && <Link to="/inventory">{t("navBar.inventory")}</Link>}
+
               <button onClick={handleLogout} className="logout-button">
                 {t("navBar.logout")}
               </button>
             </>
           ) : (
             <div className="auth-links">
-              <Link to="/login" className="hover:underline">
-                {t("navBar.login")}
-              </Link>
-              <Link to="/register" className="hover:underline">
-                {t("navBar.signUp")}
-              </Link>
+              <Link to="/login">{t("navBar.login")}</Link>
+              <Link to="/register">{t("navBar.signUp")}</Link>
             </div>
           )}
+          <select
+            onChange={(e) => changeLanguage(e.target.value)}
+            className="language-select"
+          >
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
         </div>
       </div>
     </nav>

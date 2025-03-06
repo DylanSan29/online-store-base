@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/components/navbar.css";
+import "../styles/components/AdminNavbar.css";
 import { useTranslation } from "react-i18next";
 
 const AdminNavbar = () => {
@@ -11,9 +11,11 @@ const AdminNavbar = () => {
   
   return (
     <nav className="admin-navbar">
-      <button onClick={() => changeLanguage("en")}>🇬🇧 English</button>
-      <button onClick={() => changeLanguage("es")}>🇪🇸 Español</button>
       <Link to="/">🏠 Return to Home</Link>
+      <div className="language-switcher">
+        <button onClick={() => changeLanguage("en")}>🇬🇧</button>
+        <button onClick={() => changeLanguage("es")}>🇪🇸</button>
+      </div>
     </nav>
   );
 };
