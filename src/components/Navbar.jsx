@@ -77,10 +77,14 @@ const Navbar = () => {
               </button>
             </>
           ) : (
-            <div className="auth-links">
-              <Link to="/login">{t("navBar.login")}</Link>
-              <Link to="/register">{t("navBar.signUp")}</Link>
-            </div>
+            <>
+              <div className="auth-links">
+                <Link to="/register">{t("navBar.signUp")}</Link>
+              </div>
+              <div className="auth-links">
+                <Link to="/login">{t("navBar.login")}</Link>
+              </div>
+            </>
           )}
           <select
             onChange={(e) => changeLanguage(e.target.value)}
